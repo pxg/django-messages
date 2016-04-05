@@ -87,7 +87,9 @@ class Message(models.Model):
         super(Message, self).save(**kwargs)
 
     class Meta:
-        ordering = ['-sent_at']
+
+        # Used for ordering the replies on the messages API
+        ordering = ['sent_at']
         verbose_name = _("Message")
         verbose_name_plural = _("Messages")
 
